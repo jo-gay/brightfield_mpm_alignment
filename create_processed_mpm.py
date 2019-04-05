@@ -23,7 +23,7 @@ from skimage.color import rgb2gray
 # In[8]:
 
 
-data_dir = '/data/jo/MPM Skin Deep Learning Project'
+data_dir = '/data/jo/MPM Skin Deep Learning Project/'
 subdirs = ['Dysplastic Tissue', 'Malignant Tissue', 'Healthy Tissue']
 path = data_dir + '%s/%s/med/' #Substitute in subdirectory and slide ID to get full path
 
