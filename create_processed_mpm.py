@@ -62,8 +62,8 @@ for sd in subdirs:
 
             processed = np.append(red_ch, np.zeros(red_ch.shape, dtype=int), axis=-1)
             processed = np.append(processed, blue_ch, axis=-1)
-            plt.imsave(out_file%(sd,roi), processed)
-            plt.imsave(out_file_greyscale%(sd,roi), rgb2gray(processed), cmap='gray', vmin=0, vmax=1)
+            plt.imsave(out_file%(slide,roi), processed)
+            plt.imsave(out_file_greyscale%(slide,roi), rgb2gray(processed), cmap='gray', vmin=0, vmax=1)
 
 
 
