@@ -28,8 +28,8 @@ data_dir = '/data/jo/MPM Skin Deep Learning Project/'
 subdirs = ['Dysplastic Tissue', 'Malignant Tissue', 'Healthy Tissue']
 path = data_dir + '%s/%s/med/' #Substitute in subdirectory and slide ID to get full path
 
-out_file = '/data/jo/MPM Skin Deep Learning Project/processed/%s_%d.tif' #substitute in slide ID and region ID
-out_file_greyscale = '/data/jo/MPM Skin Deep Learning Project/processed/%s_%d_gs.tif' #substitute in slide ID and region ID
+out_file = '/data/jo/MPM Skin Deep Learning Project/processed/%s_%s.tif' #substitute in slide ID and region ID
+out_file_greyscale = '/data/jo/MPM Skin Deep Learning Project/processed/%s_%s_gs.tif' #substitute in slide ID and region ID
 
 
 # In[22]:
