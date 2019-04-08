@@ -66,6 +66,8 @@ for sd in subdirs:
 
             #MPM images are rotated by 90 degrees counter clockwise compared to brightfield. Rotate back
             processed = ndimage.rotate(processed, -90)
+            #handle rounding errors which lead to sub-zero intensities
+            processed = np.max(processed, 0)
 
             plt.imsave(out_file%(slide,roi), processed)
             plt.imsave(out_file_greyscale%(slide,roi), rgb2gray(processed), cmap='gray', vmin=0, vmax=1)
