@@ -53,6 +53,7 @@ for sd in subdirs:
         
         print('Found %d regions'%(numRegions,))
         for roi in range(numRegions):
+            roi_name = images[3*roi].split('-')[0]
             shg = plt.imread(image_folder+images[3*roi])/255.
             blue_ch = np.reshape(shg, (*shg.shape,1))
             
@@ -69,8 +70,8 @@ for sd in subdirs:
             #handle rounding errors which lead to sub-zero intensities
             processed = np.maximum(processed, 0)
 
-            plt.imsave(out_file%(slide,roi), processed)
-            plt.imsave(out_file_greyscale%(slide,roi), rgb2gray(processed), cmap='gray', vmin=0, vmax=1)
+            plt.imsave(out_file%(slide,roi_name), processed)
+            plt.imsave(out_file_greyscale%(slide,roi_name), rgb2gray(processed), cmap='gray', vmin=0, vmax=1)
 
 
 
