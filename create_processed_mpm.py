@@ -18,6 +18,7 @@ import matplotlib.pyplot as plt #requires Pillow to read tiffs
 from os import walk #to get directory listing
 
 from skimage.color import rgb2gray
+from scipy import ndimage
 
 
 # In[8]:
@@ -62,6 +63,10 @@ for sd in subdirs:
 
             processed = np.append(red_ch, np.zeros(red_ch.shape, dtype=int), axis=-1)
             processed = np.append(processed, blue_ch, axis=-1)
+
+            #MPM images are rotated by 90 degrees counter clockwise compared to brightfield. Rotate back
+            processed = ndimage.rotate(processed, -90)
+
             plt.imsave(out_file%(slide,roi), processed)
             plt.imsave(out_file_greyscale%(slide,roi), rgb2gray(processed), cmap='gray', vmin=0, vmax=1)
 
